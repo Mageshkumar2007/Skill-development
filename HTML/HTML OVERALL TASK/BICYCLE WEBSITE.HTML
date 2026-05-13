@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeloPro | Complete Cycling Experience</title>
+    <style>
+        /* --- CSS FUNDAMENTALS (Your Studies) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+            scroll-behavior: smooth; /* Makes jumping between pages smooth */
+        }
+
+        body { background-color: #f9f9f9; color: #333; }
+
+        /* Navbar with Transitions */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: #111;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo span { color: #29c18e; }
+
+        .nav-links { display: flex; list-style: none; }
+
+        .nav-links li { margin-left: 25px; }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: #29c18e; }
+
+        /* HERO SECTION (First Page) */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+
+        /* PRODUCT CATALOG (First Page Style) */
+        .section-title { padding-top: 60px; text-align: center; font-size: 2rem; }
+
+        .grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 10%;
+        }
+
+        .product-card {
+            background: white;
+            border: 2px solid #eee; /* Box Model Study */
+            padding: 20px;
+            border-radius: 12px;
+            flex: 1;
+            text-align: center;
+            transition: 0.5s; /* Transition Study */
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: #29c18e;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .product-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
+
+        /* ORDERING SECTION (Second Page) */
+        #order {
+            background-color: #fff;
+            padding: 80px 10%;
+        }
+
+        .order-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            background: #f4f7f6;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .form-side, .summary-side { padding: 40px; flex: 1; }
+
+        .summary-side { background: #29c18e; color: white; }
+
+        .input-group { margin-bottom: 20px; }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .btn-order {
+            width: 100%;
+            padding: 15px;
+            background: #111;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.4s;
+            font-size: 1rem;
+        }
+
+        .btn-order:hover { background: #333; transform: scale(1.02); }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 5px;
+        }
+
+        footer { text-align: center; padding: 50px; background: #111; color: white; }
+    </style>
+</head>
+<body>
+
+    <!-- Combined Navigation -->
+    <nav class="navbar">
+        <div class="logo">Velo<span>Pro</span></div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#catalog">Catalog</a></li>
+            <li><a href="#order">Order Now</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page 1 Content: Hero -->
+    <section class="hero">
+        <h1>VeloPro Carbon Series</h1>
+        <p>The intersection of technology and speed.</p>
+    </section>
+
+    <!-- Page 1 Content: Catalog -->
+    <h2 id="catalog" class="section-title">Our Best Sellers</h2>
+    <div class="grid">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=2070&auto=format&fit=crop" alt="Road Bike">
+            <h3>Aero Stealth</h3>
+            <p>$2,999</p>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?q=80&w=2022&auto=format&fit=crop" alt="Mountain Bike">
+            <h3>Trail Hunter</h3>
+            <p>$1,850</p>
+        </div>
+    </div>
+
+    <hr style="width: 80%; margin: 50px auto; border: 0.5px solid #ddd;">
+
+    <!-- Page 2 Content: Ordering Page -->
+    <section id="order">
+        <h2 style="text-align: center; margin-bottom: 30px;">Place Your Order</h2>
+        <div class="order-container">
+            <div class="form-side">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" placeholder="Magesh Kumar">
+                </div>
+                <div class="input-group">
+                    <label>Select Bicycle</label>
+                    <select id="bikeType" onchange="calcTotal()">
+                        <option value="0">Choose model...</option>
+                        <option value="2999">Aero Stealth ($2,999)</option>
+                        <option value="1850">Trail Hunter ($1,850)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Quantity</label>
+                    <input type="number" id="qty" value="1" min="1" oninput="calcTotal()">
+                </div>
+                <button class="btn-order" onclick="submitOrder()">Confirm Order</button>
+            </div>
+
+            <div class="summary-side">
+                <h3>Order Summary</h3>
+                <br>
+                <div class="summary-item"><span>Price:</span> <span>$<span id="resPrice">0</span></span></div>
+                <div class="summary-item"><span>Tax (10%):</span> <span>$<span id="resTax">0</span></span></div>
+                <div class="summary-item"><span>Shipping:</span> <span>$50</span></div>
+                <br>
+                <h3>Total: $<span id="resTotal">50</span></h3>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 VeloPro | Built by Magesh</p>
+    </footer>
+
+    <!-- JS Logic from your studies -->
+    <script>
+        function calcTotal() {
+            let price = parseFloat(document.getElementById('bikeType').value);
+            let quantity = parseInt(document.getElementById('qty').value);
+            let taxRate = 0.10;
+            let shipping = 50;
+
+            let subtotal = price * quantity;
+            let tax = subtotal * taxRate;
+            let final = subtotal + tax + shipping;
+
+            document.getElementById('resPrice').innerText = subtotal.toFixed(2);
+            document.getElementById('resTax').innerText = tax.toFixed(2);
+            document.getElementById('resTotal').innerText = final.toFixed(2);
+        }
+
+        function submitOrder() {
+            let name = document.getElementById('name').value;
+            let total = document.getElementById('resTotal').innerText;
+            if(total == "50.00") {
+                alert("Please select a bike first!");
+            } else {
+                alert("Thank you, " + name + "! Your order of $" + total + " is confirmed.");
+            }
+        }
+    </script>
+</body>
+</html>
