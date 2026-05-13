@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Positioning and Layout</title>
+
+  <style>
+
+    /* ===== Page Styling ===== */
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    /* ===== Header ===== */
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+
+      /* Sticky Position */
+      position: sticky;
+      top: 0;
+    }
+
+    /* ===== Main Layout using Grid ===== */
+
+    .container {
+      display: grid;
+
+      grid-template-columns: 250px 1fr;
+
+      gap: 20px;
+
+      padding: 20px;
+    }
+
+    /* ===== Sidebar ===== */
+
+    .sidebar {
+      background-color: #ddd;
+      padding: 20px;
+      height: 400px;
+    }
+
+    /* ===== Content Area ===== */
+
+    .content {
+      background-color: white;
+      padding: 20px;
+
+      /* Relative Position */
+      position: relative;
+    }
+
+    /* ===== Absolute Positioned Box ===== */
+
+    .notification {
+      position: absolute;
+
+      top: 10px;
+      right: 10px;
+
+      background-color: red;
+      color: white;
+
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    /* ===== Flexbox Cards ===== */
+
+    .cards {
+      display: flex;
+
+      gap: 20px;
+
+      margin-top: 50px;
+    }
+
+    .card {
+      flex: 1;
+
+      background-color: lightblue;
+
+      padding: 30px;
+
+      text-align: center;
+
+      border-radius: 10px;
+    }
+
+    /* ===== Fixed Button ===== */
+
+    .help-btn {
+      position: fixed;
+
+      bottom: 20px;
+      right: 20px;
+
+      background-color: black;
+      color: white;
+
+      padding: 15px;
+
+      border-radius: 50%;
+
+      cursor: pointer;
+    }
+
+    /* ===== Footer ===== */
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>CSS Positioning and Layout</h1>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Sidebar</h2>
+
+      <p>Menu Item 1</p>
+      <p>Menu Item 2</p>
+      <p>Menu Item 3</p>
+    </aside>
+
+    <!-- Content -->
+    <main class="content">
+
+      <!-- Absolute Position -->
+      <div class="notification">
+        New
+      </div>
+
+      <h2>Main Content</h2>
+
+      <p>
+        This layout uses:
+      </p>
+
+      <ul>
+        <li>Grid Layout</li>
+        <li>Flexbox</li>
+        <li>Sticky Position</li>
+        <li>Absolute Position</li>
+        <li>Fixed Position</li>
+      </ul>
+
+      <!-- Flexbox Layout -->
+      <div class="cards">
+
+        <div class="card">
+          Card 1
+        </div>
+
+        <div class="card">
+          Card 2
+        </div>
+
+        <div class="card">
+          Card 3
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Fixed Position -->
+  <div class="help-btn">
+    ?
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Footer Section
+  </footer>
+
+</body>
+</html>
